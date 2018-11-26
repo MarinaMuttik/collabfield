@@ -13,7 +13,7 @@ nav {
   }
 }
 
-.navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
+.navbar-expand-lg, .navbar-toggler:focus, .collapse, button.navbar-toggler {
   background: $navbarColor !important;
   border: none;
   a {
