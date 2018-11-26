@@ -8,10 +8,10 @@
         = f.email_field :email,
                         autofocus: true,
                         class: 'form-control',
-                        autocomplete: "email"
+                        placeholder: "email"
         = f.password_field :password,
                             class: 'form-control',
-                            autocomplete: "current-password"
+                            placeholder: "current password"
         - if devise_mapping.rememberable?
           = f.check_box :remember_me
         %p
