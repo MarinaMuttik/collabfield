@@ -1,7 +1,9 @@
-.container
+%h1 Get in touch with like-minded people!
+%h3 Create, study, accomplish goals together
+.container#sign-up-form
   .row
     .col-sm-6.col-sm-offset-3
-      %h2.text-center Sign up
+      %h2.text-center Sign up today - it's free!
       = bootstrap_form_for(resource,
                            as: resource_name,
                            url: session_path(resource_name)) do |f|

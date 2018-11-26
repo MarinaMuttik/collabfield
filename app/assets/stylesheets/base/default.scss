@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $light-teal;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-family: "Raleway-Bold";
+}
+
+i {
+  width: 5rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:hover, a:active, a:link, a:visited {
+  text-decoration: none;
+}
+
+.control-label {
+  display: none;
+}
