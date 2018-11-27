@@ -30,39 +30,40 @@ nav {
 
 .mobile-menu {
   i {
-    color: white;
+    color: $white;
   }
   ul {
     padding: 0px;
   }
   a {
     display: block;
-    padding: 10px 0px 10px 25px !important;
+    padding: 10px 0px 10px 25px;
   }
   a:hover {
-    background: white !important;
-    color: black !important;
+    background: $white;
+    color: $black;
     i {
-      color: black;
+      color: $black;
     }
   }
 }
 
 .icon-bar {
-  background-color: white !important;
+  background-color: $white;
 }
 
 .active a {
-  background: $teal !important;
-  border-bottom: solid 5px white;
+  background: $teal;
+  border-bottom: solid 5px $white;
 }
 
-.dropdown-toggle, .dropdown-menu {
-  background: $teal !important;
-  border: none;
+.dropdown-toggle,
+.dropdown-menu {
+  background: $teal;
+  border: 0;
 }
 
 .dropdown-menu a:hover {
-  color: black !important;
-  background: white !important;
+  background: $white;
+  color: $black;
 }
