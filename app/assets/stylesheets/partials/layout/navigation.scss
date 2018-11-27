@@ -1,26 +1,35 @@
-nav {
-  .navbar {
-    width: 100%;
-    button, .navbar-brand {
-      transition: opacity 0.15s;
-    }
-    button {
-      margin-right: 0;
-    }
-    button:hover, .navbar-brand:hover {
-      opacity: 0.8;
-    }
+.navbar {
+  font-size: 2rem;
+  width: 100%;
+
+  .navbar-brand {
+    font-size: 4rem;
   }
-  .col-sm-5, .col-sm-7 {
-    padding: 0;
+
+  .navbar-brand:hover,
+  .nav-link:hover {
+    -webkit-text-stroke: 0.05em;
+  }
+
+  .container {
+    min-width: 100%;
   }
 }
 
-.navbar-expand-lg, .navbar-toggler:focus, .collapse, button.navbar-toggler {
-  background: $teal !important;
+.col-sm-7, .col-sm-5 {
+  padding: 2rem;
+  min-height: 7rem;
+
+  li {
+    padding: 1rem;
+  }
+}
+
+.navbar-expand-lg {
+  background: $teal;
   border: none;
   a {
-    color: white !important;
+    color: white;
   }
 }
 
@@ -40,7 +49,7 @@ nav {
     padding: 10px 0px 10px 25px;
   }
   a:hover {
-    background: $white;
+    background: $transp-teal;
     color: $black;
     i {
       color: $black;
@@ -49,11 +58,11 @@ nav {
 }
 
 .icon-bar {
-  background-color: $white;
+  background-color: $transp-teal;
 }
 
 .active a {
-  background: $teal;
+  background: $dark-teal;
   border-bottom: solid 5px $white;
 }
 
@@ -64,6 +73,6 @@ nav {
 }
 
 .dropdown-menu a:hover {
-  background: $white;
+  background: $transp-teal;
   color: $black;
 }

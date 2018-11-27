@@ -1,9 +1,12 @@
-.navbar-header
-  %button.navbar-toggler{"aria-controls" => "navbar-collapsible-content",
+.navbar-header.navbar-left
+  = link_to 'CollabField', root_path, class: 'navbar-brand'
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent",
                          "aria-expanded" => "false",
                          "aria-label" => "Toggle navigation",
-                         "data-target" => "#navbar-collapsible-content",
+                         "data-target" => "#navbarSupportedContent",
                          "data-toggle" => "collapse",
                          :type => "button"}
-    %span.navbar-toggler-icon
-  = link_to 'CollabField', root_path, class: 'navbar-brand'
+    %span.navbar-toggler-icon Navigation
+    %span.icon-bar
+    %span.icon-bar
+    %span.icon-bar
