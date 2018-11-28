@@ -1,29 +1,30 @@
-%h1 Get in touch with like-minded people!
-%h3 Create, study, accomplish goals together
-.container#sign-up-form
+%section
+  %h1 Get in touch with like-minded people!
+  %h3 Create, study, accomplish goals together
+.container
   .row
-    .col-sm-6.col-sm-offset-3
+    %section.col-sm-6.col-sm-offset-3
       %h2.text-center Sign up today - it's free!
       = bootstrap_form_for(resource,
-                           as: resource_name,
-                           url: session_path(resource_name)) do |f|
+                           :as => resource_name,
+                           :url => registration_path(resource_name)) do |f|
         = devise_error_messages!
         = f.text_field :name,
+                       autofocus: true,
                        class: 'form-control',
                        placeholder: 'username (will be shown publicly)'
         = f.email_field :email,
-                        autofocus: true,
                         class: 'form-control',
-                        placeholder: "email"
+                        placeholder: 'email'
         - if @minimum_password_length
           %em
             (#{@minimum_password_length} characters minimum)
         = f.password_field :password,
                             class: 'form-control',
-                            placeholder: "new password"
+                            placeholder: 'new password'
         = f.password_field :password_confirmation,
                            class: 'form-control',
-                           placeholder: 'new password'
-        = f.submit "Sign up",
-                   class: 'form-control sign-up-button'
-      = render "devise/shared/links"
+                           placeholder: 'confirm password'
+        %p.text-center
+          = f.submit 'Sign up', class: 'btn'
+      .text-center= render 'devise/shared/links'

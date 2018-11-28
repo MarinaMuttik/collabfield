@@ -6,7 +6,20 @@ body {
   background: $light-teal;
   font-size: 1.5rem;
   font-family: "Raleway", sans-serif;
+  color: $white;
   margin-top: 10rem;
+}
+
+section {
+  background-color: $transp-teal;
+  box-sizing: border-box;
+  margin: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 20rem;
+  overflow: hidden;
+  padding: 1rem;
+  width: 70%;
 }
 
 h1 {
@@ -17,14 +30,36 @@ i {
   width: 5rem;
 }
 
+a {
+  color: $white;
+}
+
+a:hover {
+  -webkit-text-stroke: 0.05em;
+}
+
 ul {
   list-style-type: none;
 }
 
 a:hover, a:active, a:link, a:visited {
+  color: $white;
   text-decoration: none;
 }
 
 .control-label {
   display: none;
+}
+
+.form-control {
+  color: $darkest-teal;
+}
+
+.btn {
+  background-color: $transp-teal;
+}
+
+.btn:hover {
+  -webkit-text-stroke: 0.05em;
+  color: $white;
 }
