@@ -1,0 +1,20 @@
+.container
+  .row
+    %section.col-sm-6.col-sm-offset-3
+      %h2.text-center Log in
+      = bootstrap_form_for(resource,
+                           as: resource_name,
+                           url: session_path(resource_name)) do |f|
+        = f.email_field :email,
+                        autofocus: true,
+                        class: 'form-control',
+                        placeholder: 'email'
+        = f.password_field :password,
+                           autocomplete: 'off',
+                           class: 'form-control',
+                           placeholder: 'current password'
+        - if devise_mapping.rememberable?
+          = f.check_box :remember_me
+        %p.text-center
+          = f.submit "Log in", class: 'btn'
+      .text-center= render "devise/shared/links"

@@ -19,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'haml-rails'
 # Bootstrap for nav and grid
 gem 'bootstrap-sass'
+# bootstrap form
+gem 'bootstrap_form'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -31,7 +33,8 @@ gem 'jquery-rails'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# authentication with devise
+gem 'devise'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

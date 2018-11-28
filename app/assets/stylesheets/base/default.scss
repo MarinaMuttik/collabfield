@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $light-teal;
+  color: $white;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 10rem;
+}
+
+section {
+  background-color: $transp-teal;
+  box-sizing: border-box;
+  margin: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 20rem;
+  overflow: hidden;
+  padding: 1rem;
+  width: 70%;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+i {
+  width: 5rem;
+}
+
+a {
+  color: $white;
+}
+
+a:hover {
+  -webkit-text-stroke: 0.05em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:hover,
+a:active,
+a:link,
+a:visited {
+  color: $white;
+  text-decoration: none;
+}
+
+.control-label {
+  display: none;
+}
+
+.form-control {
+  color: $darkest-teal;
+}
+
+.btn {
+  background-color: $transp-teal;
+}
+
+.btn:hover {
+  color: $white;
+  -webkit-text-stroke: 0.05em;
+}

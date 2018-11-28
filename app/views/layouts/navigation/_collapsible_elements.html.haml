@@ -1,0 +1,29 @@
+#navbarSupportedContent.collapse.navbar-collapse.navbar-right
+  %ul.navbar-nav
+    - if user_signed_in?
+
+      %li.nav-item.dropdown.pc-menu
+        %a#navbarDropdown.nav-link.dropdown-toggle#user-settings{ "aria-expanded" => "false",
+                                                   "aria-haspopup" => "true",
+                                                   "data-toggle" => "dropdown",
+                                                   :href => "#",
+                                                   :role => "button" }
+          %span Welcome, 
+          %span#user-name= current_user.name
+          %span.caret
+        %ul.dropdown-menu{ "aria-labelledby" => "navbarDropdown" }
+          %li.dropdown_item= link_to 'Edit Profile', edit_user_registration_path
+          .dropdown-divider
+          %li.dropdown_item= link_to 'Log Out', destroy_user_session_path, method: :delete
+
+      %li.mobile-menu
+        = link_to 'Edit Profile', edit_user_registration_path
+
+      %li.mobile-menu
+        = link_to 'Log Out', destroy_user_session_path, method: :delete
+
+    - else
+      %li.nav-item
+        .nav-link= link_to 'Login', login_path
+      %li.nav-item
+        .nav-link= link_to 'Signup', signup_path

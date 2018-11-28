@@ -1,22 +1,87 @@
-nav {
-  .navbar {
-    width: 100%;
-    button, .navbar-brand {
-      transition: opacity 0.15s;
-    }
-    button {
-      margin-right: 0;
-    }
-    button:hover, .navbar-brand:hover {
-      opacity: 0.8;
+.navbar {
+  font-size: 2rem;
+  width: 100%;
+
+  .navbar-brand {
+    font-size: 4rem;
+  }
+
+  .navbar-brand:hover,
+  .nav-link:hover,
+  .dropdown-menu a:hover {
+    background-color: $teal;
+    color: $white;
+    -webkit-text-stroke: 0.05em;
+  }
+
+  .container {
+    min-width: 100%;
+  }
+}
+
+.col-sm-7,
+.col-sm-5 {
+  padding: 2rem;
+  min-height: 7rem;
+
+  li {
+    color: $white;
+    padding: 1rem;
+  }
+}
+
+.dropdown-menu li a {
+  color: $white;
+}
+
+.dropdown-divider {
+  border: 0.05rem solid $light-teal;
+}
+
+.navbar-expand-lg {
+  background: $teal;
+  border: none;
+  a {
+    color: $white;
+  }
+}
+
+.pc-menu {
+  margin-right: 5rem;
+}
+
+.mobile-menu {
+  i {
+    color: $white;
+  }
+  ul {
+    padding: 0px;
+  }
+  a {
+    color: $white;
+    display: block;
+    padding: 10px 0px 10px 25px;
+  }
+  a:hover {
+    background: $transp-teal;
+    color: $white;
+    -webkit-text-stroke: 0.05em;
+    i {
+      color: $white;
     }
   }
 }
 
-.navbar-expand-lg, .navbar-toggler:focus, .collapse, button.navbar-toggler {
-  background: $teal !important;
-  border: none;
-  a {
-    color: white !important;
-  }
+.icon-bar {
+  background-color: $white;
+}
+
+.active a {
+  background: $dark-teal;
+  border-bottom: solid 5px $white;
+}
+
+.dropdown-menu {
+  background: $teal;
+  border: 0;
 }
