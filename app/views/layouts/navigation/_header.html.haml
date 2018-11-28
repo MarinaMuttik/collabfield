@@ -1,12 +1,12 @@
 .navbar-header.navbar-left
   = link_to 'CollabField', root_path, class: 'navbar-brand'
-  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent",
+  %button.navbar-toggle.collapsed{"aria-controls" => "navbarSupportedContent",
                          "aria-expanded" => "false",
                          "aria-label" => "Toggle navigation",
                          "data-target" => "#navbarSupportedContent",
                          "data-toggle" => "collapse",
                          :type => "button"}
-    %span.navbar-toggler-icon Navigation
+    %span.sr-only Toggle nav
     %span.icon-bar
     %span.icon-bar
     %span.icon-bar
