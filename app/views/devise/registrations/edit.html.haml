@@ -12,7 +12,7 @@
                        class: 'form-control'
         = f.email_field :email,
                         autofocus: true,
-                        autocomplete: "email",
+                        autocomplete: 'email',
                         class: 'form-control'
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           %div
@@ -23,22 +23,22 @@
             characters minimum
         %i (leave blank if you don't want to chansge it)
         = f.password_field :password,
-                           autocomplete: "new-password",
+                           autocomplete: 'new-password',
                            class: 'form-control'
         = f.password_field :password_confirmation,
-                           autocomplete: "new-password",
+                           autocomplete: 'new-password',
                            class: 'form-control'
         %p (we need your current password to confirm your changes)
         = f.password_field :current_password,
-                           autocomplete: "current-password",
+                           autocomplete: 'current-password',
                            class: 'form-control'
         .text-center
-          = f.submit "Update", class: 'btn'
+          = f.submit 'Update', class: 'btn'
       %h3.text-center Cancel my account
       .text-center
-        %p= button_to "Cancel my account",
+        %p= button_to 'Cancel my account',
                       registration_path(resource_name),
-                      data: { confirm: "Are you sure?" },
+                      data: { confirm: 'Are you sure?' },
                       method: :delete,
                       class: 'btn'
-      %p.text-center= link_to "Back", :back
+      %p.text-center= link_to 'Back', :back
