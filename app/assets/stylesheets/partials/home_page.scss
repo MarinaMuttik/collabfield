@@ -2,7 +2,7 @@
   background-color: $transp-teal;
   min-height: 800px;
   margin: 0;
-  padding: 10px 0 0 0;
+  padding: 1rem;
 }
 
 #side-menu {
@@ -33,11 +33,4 @@
       color: $white;
     }
   }
-}
-
-.card-block {
-  background-color: $transp-teal;
-  padding: 1rem;
-  word-wrap: break-word;
-  margin: 1rem;
 }

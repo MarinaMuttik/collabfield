@@ -1,0 +1,28 @@
+.single-post-card {
+  min-height: 15rem;
+  max-height: 15rem;
+  box-shadow: 0.2rem 0.2rem 1rem $dark-teal;
+  padding: 1rem;
+  text-align: left;
+  transition: border 0.1s, background 0.5s;
+
+  .post-text {
+    word-wrap: break-word;
+  }
+
+  a, a:active, a:hover {
+    color: $white;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: $white;
+    box-shadow: none;
+    border-radius: 1%;
+    color: $darkest-teal;
+  }
+}
+
+.post-content {
+display: none;
+}
