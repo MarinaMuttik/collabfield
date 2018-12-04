@@ -3,7 +3,7 @@
   max-height: 15rem;
   box-shadow: 0.2rem 0.2rem 1rem $dark-teal;
   padding: 1rem;
-  text-align: left;
+  text-align: center;
   transition: border 0.1s, background 0.5s;
 
   .post-text {
@@ -16,7 +16,7 @@
 
   &:hover {
     cursor: pointer;
-    background: $white;
+    background-color: $white !important;
     box-shadow: none;
     border-radius: 1%;
     color: $darkest-teal;

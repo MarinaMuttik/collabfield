@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
       $(".single-post-card").each(function() {
           $(this).addClass("solid-color-mode");
           $(this).css('background-color', randomColor());
-      });  
+      });
     }
 
     $('#feed').on( 'mouseenter', '.single-post-list', function() {

@@ -1,0 +1,38 @@
+.modal-content {
+  color: $dark-teal;
+  h3 {
+    text-align: center;
+  }
+
+  p {
+    margin: 4rem 0;
+  }
+
+  h3, p {
+    overflow: hidden;
+  }
+
+  .posted-by {
+    color: $darkest-teal;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .interested {
+    text-align: center;
+    a {
+      background-color: $teal;
+      padding: 1rem;
+      color: $white;
+      border-radius: 1rem;
+      &:hover {
+        background-color: $dark-teal;
+        color: $white;
+      }
+    }
+  }
+
+  .modal-header {
+    background-color: $transp-teal;
+  }
+}
