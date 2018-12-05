@@ -1,0 +1,13 @@
+#branch-main-content.container
+  .row
+    %h1.page-title= page_title
+  .row
+    = render 'posts/branch/create_new_post', branch: branch
+  .row
+    = render 'posts/branch/categories', branch: branch
+  .row
+    %section.col-sm-12#feed
+      = render @posts
+      = render no_posts_partial_path
+  .infinite-scroll
+    = will_paginate @posts

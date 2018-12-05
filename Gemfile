@@ -21,6 +21,8 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 # bootstrap form
 gem 'bootstrap_form'
+# paginate
+gem 'will_paginate'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

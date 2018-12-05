@@ -28,8 +28,10 @@ Categories = {
 }
 
 def seed_categories
-  Categories.each do |branch, name|
-    Category.create(branch: branch, name: name)
+  Categories.each do |branch, names|
+    names.each do |name|
+      Category.create(branch: branch, name: name)
+    end
   end
 end
 

@@ -8,29 +8,23 @@
 #side-menu {
   padding: 0;
   #links-list {
-    margin-top: 20px;
+    background-color: $transp-teal;
+    margin: 2rem;
     padding: 0;
-    font-size: 14px;
-    font-size: 1.4rem;
     a {
       display: block;
-      padding: 5px 15px;
-      margin: 2px 0;
+      padding: 1rem 2rem;
+      margin: 0.5rem 0;
     }
     li {
-      min-width: 195px;
-      max-width: 195px;
-    }
-    li, li a {
-      color: $white;
-      text-decoration: none;
-    }
-    li:hover {
-      border-radius: 50px;
-      background: $teal;
-    }
-    li:hover a, li:hover i {
-      color: $white;
+      i {
+        margin-right: -2rem;
+      }
+
+      &:hover {
+        border-radius: 3rem;
+        background: $teal;
+      }
     }
   }
 }
