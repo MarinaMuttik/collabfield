@@ -1,0 +1,13 @@
+#single-post-content {
+  height: calc(100vh - 15rem);
+  background-color: $transp-teal;
+
+  .posted-by {
+    font-style: italic;
+    margin: 4rem 0;
+  }
+
+  p {
+    margin: 5rem 0;
+  }
+}

@@ -1,0 +1,6 @@
+#single-post-content.container
+  .row
+    .col-sm-6.col-sm-offset-3
+      %h2.text-center= @post.title
+      %h4.posted-by Posted by: #{@post.user.name}
+      %p= @post.content
