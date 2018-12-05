@@ -57,6 +57,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+# generate dummy text
   gem 'faker'
 end
 
@@ -69,9 +70,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
   gem 'headless'
-  gem 'poltergeist'
   gem 'database_cleaner'
-  # generate dummy text
   gem 'faker'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'

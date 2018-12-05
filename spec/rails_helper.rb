@@ -6,7 +6,6 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require 'capybara/poltergeist'
 require 'factory_girl_rails'
 require 'capybara/rspec'
 
@@ -44,7 +43,7 @@ RSpec.configure do |config|
 
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryGirl::Syntax::Methods
-  Capybara.default_driver = :poltergeist
+  Capybara.default_driver = :rack_test
   Capybara.server = :puma
   Capybara.javascript_driver = :selenium_chrome
   # RSpec Rails can automatically mix in different behaviours to your tests
