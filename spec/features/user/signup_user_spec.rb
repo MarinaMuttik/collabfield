@@ -13,5 +13,4 @@ RSpec.feature "Signup", :type => :feature do
     find('.signup-button').click
     expect(page).to have_selector('#user-settings')
   end
-
 end
