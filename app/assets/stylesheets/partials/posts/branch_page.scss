@@ -1,0 +1,31 @@
+.single-post-list {
+  min-height: 5rem;
+  max-height: 5rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  border-bottom: solid 0.4rem $dark-teal;
+  border-bottom-right-radius: 10%;
+  transition: border-color 0.2s;
+  overflow: hidden;
+}
+
+.category-item {
+  display: inline-block;
+  margin: 2rem 0;
+  a {
+    color: $dark-teal;
+    border: solid 0.2rem $dark-teal;
+    border-radius: 8%;
+    padding: 1rem;
+  }
+  a:hover, .selected-item {
+    background: $teal;
+    color: $white;
+    border: solid 0.2rem white;
+    border-radius: 0px;
+  }
+}
+
+#branch-main-content {
+  height: calc(100vh - 50px);
+}

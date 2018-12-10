@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function() {
     if ($(".single-post-card").length) {
       // set a solid background color style
       $(".single-post-card").each(function() {
-          $(this).addClass("solid-color-mode");
           $(this).css('background-color', randomColor());
       });
     }

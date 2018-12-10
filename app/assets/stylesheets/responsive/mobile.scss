@@ -6,15 +6,31 @@
   display: none !important;
   }
   body {
-    margin-top: 20rem;
-  }
-  .post-text {
-    font-size: 1rem;
+    margin-top: 17rem;
   }
 }
 
 @media only screen and (min-width:767px) and (max-width: 1000px) {
   .container {
      width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .post-button {
+    padding: 0.5rem;
+  }
+  .category-item {
+    a {
+      padding: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .single-post-list {
+    min-height: 7rem;
+    max-height: 7rem;
+    padding: 1rem 0;
   }
 }
