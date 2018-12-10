@@ -22,4 +22,12 @@ module PostsHelper
      'shared/empty_partial'
    end
   end
+
+  def post_format_partial_path
+    if current_page?(root_path)
+      'posts/post/home_page'
+    else
+      'posts/post/branch_page'
+    end
+  end
 end
