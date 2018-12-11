@@ -13,11 +13,40 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  context 'default_scope' do
-    it 'orders by created at descending by default' do
+  context 'Scopes' do
+    it 'default_scope orders by created at descending' do
       post1 = create(:post)
       post2 = create(:post)
       expect(Post.all).to eq [post2, post1]
+    end
+
+    it 'by_branch gets posts from particular branch' do
+      category = create(:category)
+      create(:post, category_id: category.id)
+      create_list(:post, 10)
+      posts = Post.by_branch(category.branch)
+      expect(posts.count).to eq 1
+      expect(posts[0].category.branch).to eq category.branch
+    end
+
+    it 'by_category gets posts from particular category' do
+      category = create(:category)
+      create(:post, category_id: category.id)
+      create_list(:post, 10)
+      posts = Post.by_category(category.branch, category.name)
+      expect(posts.count).to eq 1
+      expect(posts[0].category.name).to eq category.name
+    end
+
+    it 'search gets posts from input' do
+      post = create(:post, title: 'test title', content: 'fun stuff')
+      create_list(:post, 10)
+      title_posts = Post.search('test')
+      expect(title_posts.count).to eq 1
+      expect(title_posts[0].id).to eq post.id
+      content_posts = Post.search('fun')
+      expect(content_posts.count).to eq 1
+      expect(content_posts[0].id).to eq post.id
     end
   end
 end
