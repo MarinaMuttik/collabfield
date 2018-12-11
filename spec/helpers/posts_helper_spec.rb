@@ -38,7 +38,7 @@ RSpec.describe PostsHelper, :type => :helper do
         eq 'posts/branch/no_posts'
       )
     end
-    it "returns an empty partial's path" do
+    it 'returns an empty partials path' do
       assign(:posts, [1])
       expect(helper.no_posts_partial_path).to (
         eq 'shared/empty_partial'
@@ -57,6 +57,38 @@ RSpec.describe PostsHelper, :type => :helper do
       helper.stub(:current_page?).and_return(false)
       expect(helper.post_format_partial_path).to (
         eq 'posts/post/branch_page'
+      )
+    end
+  end
+
+  context '#category_field_partial_path' do
+    it 'returns a category_form partial path' do
+      controller.params[:category] = 'category'
+      expect(helper.category_field_partial_path).to (
+        eq 'posts/branch/search_form/category_form'
+      )
+    end
+    it 'returns an empty partials path' do
+      controller.params[:category] = nil
+      expect(helper.category_field_partial_path).to (
+        eq 'shared/empty_partial'
+      )
+    end
+  end
+
+  context '#update_pagination_partial_path' do
+    it 'returns an update_pagination partial path' do
+      posts = double('posts', :next_page => 2)
+      assign(:posts, posts)
+      expect(helper.update_pagination_partial_path).to (
+        eq 'posts/posts_pagination_page/update_pagination'
+      )
+    end
+    it 'returns a remove_pagination partial path' do
+      posts = double('posts', :next_page => nil)
+      assign(:posts, posts)
+      expect(helper.update_pagination_partial_path).to (
+        eq 'posts/posts_pagination_page/remove_pagination'
       )
     end
   end
