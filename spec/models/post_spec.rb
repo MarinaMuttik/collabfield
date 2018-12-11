@@ -12,4 +12,12 @@ RSpec.describe Post, type: :model do
       expect(association).to eq :belongs_to
     end
   end
+
+  context 'default_scope' do
+    it 'orders by created at descending by default' do
+      post1 = create(:post)
+      post2 = create(:post)
+      expect(Post.all).to eq [post2, post1]
+    end
+  end
 end
