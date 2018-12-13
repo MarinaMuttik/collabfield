@@ -13,7 +13,7 @@ class PostsForBranchService
     elsif @category.present? && @search.blank?
       posts = Post.by_category(@branch, @category)
     elsif @category.present? && @search.present?
-      posts = Post.by_category(@branch, @category).search(search)
+      posts = Post.by_category(@branch, @category).search(@search)
     else
     end
   end
