@@ -10,5 +10,4 @@ RSpec.feature "Logout", :type => :feature do
     find('nav a', text: 'Log Out').click
     expect(page).to have_selector('nav a', text: 'Login')
   end
-
 end

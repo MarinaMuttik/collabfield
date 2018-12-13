@@ -1,8 +1,10 @@
 #main-content {
   background-color: $transp-teal;
-  min-height: 800px;
   margin: 0;
-  padding: 1rem;
+  padding: 3rem;
+  h3 {
+    text-align: center;
+  }
 }
 
 #side-menu {
