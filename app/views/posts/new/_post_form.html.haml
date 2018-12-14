@@ -1,0 +1,26 @@
+= bootstrap_form_for(post) do |f|
+  - if post.errors.any?
+    #error-explanation
+      %h2
+        = pluralize(post.errors.count, "error")
+        prohibited
+        this post from being saved:
+      %ul
+        - post.errors.full_messages.each do |msg|
+          %li= msg
+  = f.text_field :title,
+                 autofocus: true,
+                 class: 'form-control',
+                 placeholder: 'Title'
+  = f.hidden_field :branch,
+                   :value => branch
+  = f.text_area :content,
+                rows: 10,
+                class: 'form-control',
+                placeholder: 'Enter details of what you are looking for in your post - e.g. specific interests, expertise, etc.'
+  = f.collection_select :category_id,
+                        categories,
+                        :id,
+                        :name,
+                        class: 'form-control'
+  = f.submit "Submit post", class: 'form-control btn'

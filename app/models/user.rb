@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # destroy deletes all posts user made if the user is destroyed
   has_many :posts, dependent: :destroy
+
+  validates :name, presence: true,
+                   uniqueness: { case_sensitive: true }
 end

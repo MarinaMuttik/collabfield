@@ -1,0 +1,6 @@
+.container
+  .row
+    %h1.page-title Create a new post
+  .row
+    %section.col-sm-6.col-sm-offset-3
+      = render 'posts/new/post_form', post: @post, branch: @branch, categories: @categories
