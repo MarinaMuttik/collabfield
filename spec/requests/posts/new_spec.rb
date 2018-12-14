@@ -10,6 +10,9 @@ RSpec.describe "new", :type => :request do
   end
 
   context 'signed in user' do
+    let(:user) { create(:user) }
+    before(:each) { login_as user }
+
     it 'redirects to new post path' do
       get '/posts/new'
       expect(response).to render_template(:new)
