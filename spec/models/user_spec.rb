@@ -13,6 +13,10 @@ RSpec.describe User, type: :model do
     let(:user1) { build(:user) }
     let(:user2) { User.new }
 
+    it 'creates successfully' do
+      expect(user1).to be_valid
+    end
+
     # test new account without username
     it "is not valid without a username" do
       user1.name = nil
