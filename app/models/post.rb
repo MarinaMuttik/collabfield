@@ -6,8 +6,9 @@ class Post < ApplicationRecord
                     length: { minimum: 3, maximum: 200 }
   validates :content, presence: true,
                       length: { minimum: 20 }
+  validates :category_id, presence: true
 
-  default_scope -> { includes(:user).order(created_at: :desc) }
+  default_scope { includes(:user).order(created_at: :desc) }
 
   scope :by_branch, -> (branch) do
     joins(:category).where(categories: { branch: branch })
