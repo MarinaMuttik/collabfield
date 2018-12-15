@@ -46,4 +46,16 @@ module PostsHelper
       'posts/posts_pagination_page/remove_pagination'
     end
   end
+
+  def contact_user_partial_path
+    if user_signed_in?
+      if @post.user_id != current_user.id
+        'posts/show/contact_user'
+      else
+        'shared/empty_partial'
+      end
+    else
+      'posts/show/login_required'
+    end
+  end
 end
