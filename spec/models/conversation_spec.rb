@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Private::Conversation, type: :model do
   context 'Associations' do
     it 'belongs_to sender' do
-      association = described_class.reflect_on_association(:send).macro
+      association = described_class.reflect_on_association(:sender).macro
       expect(association).to eq :belongs_to
     end
 
@@ -14,7 +14,7 @@ RSpec.describe Private::Conversation, type: :model do
 
     it 'has_many messages' do
       association = described_class.reflect_on_association(:messages)
-      expect(association).to eq :has_many
+      expect(association.macro).to eq :has_many
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe Private::Conversation, type: :model do
     it 'gets a conversation between users' do
       user1 = create(:user)
       user2 = create(:user)
-      create(:private_conversation, recipient_id = user1.id, sender_id = user2.id)
+      create(:private_conversation, recipient_id: user1.id, sender_id: user2.id)
       conversation = Private::Conversation.between_users(user1.id, user2.id)
       expect(conversation.count).to eq 1
     end
