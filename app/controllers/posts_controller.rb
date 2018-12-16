@@ -90,4 +90,8 @@ class PostsController < ApplicationController
       format.js { render partial: 'posts/posts_pagination_page' }
     end
   end
+
+  def conversation_exist?
+    Private::Conversation.between_users(current_user.id, @post.user.id).present?
+  end
 end
