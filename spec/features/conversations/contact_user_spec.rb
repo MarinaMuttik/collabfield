@@ -20,7 +20,7 @@ RSpec.feature 'Contact User', :type => :feature do
                                     text: 'Message has been sent')
     end
 
-    scenario 'sees already contacted message' do
+    scenario 'sees already contacted message', js: true do
       create(:private_conversation_with_messages,
              recipient_id: post.user.id,
              sender_id: user.id)
@@ -32,7 +32,7 @@ RSpec.feature 'Contact User', :type => :feature do
   end
 
   context 'non-logged-in user' do
-    scenario 'sees a login require message to contact' do
+    scenario 'sees a login require message to contact', js: true do
       visit post_path(post)
       expect(page).to have_selector('.text-center',
                                     text: 'To contact the user you have to')
