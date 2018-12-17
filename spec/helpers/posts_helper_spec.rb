@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe PostsHelper, :type => :helper do
   context '#create_new_post_partial_path' do
     it "returns a signed_in partials path" do
-      helper.stub(:user_signed_in?).and_return(true)
+      allow(helper).to receive(:user_signed_in?).and_return(true)
       expect(helper.create_new_post_partial_path).to (
         eq 'posts/branch/create_new_post/signed_in'
       )
     end
     it "returns a not_signed_in partials path" do
-      helper.stub(:user_signed_in?).and_return(false)
+      allow(helper).to receive(:user_signed_in?).and_return(false)
       expect(helper.create_new_post_partial_path).to (
         eq 'posts/branch/create_new_post/not_signed_in'
       )
@@ -48,13 +48,13 @@ RSpec.describe PostsHelper, :type => :helper do
 
   context '#post_format_partial_path' do
     it 'returns a home_page partials path' do
-      helper.stub(:current_page?).and_return(true)
+      allow(helper).to receive(:current_page?).and_return(true)
       expect(helper.post_format_partial_path).to (
         eq 'posts/post/home_page'
       )
     end
     it 'returns a branch_page partials path' do
-      helper.stub(:current_page?).and_return(false)
+      allow(helper).to receive(:current_page?).and_return(false)
       expect(helper.post_format_partial_path).to (
         eq 'posts/post/branch_page'
       )
@@ -96,11 +96,11 @@ RSpec.describe PostsHelper, :type => :helper do
   context '#contact_user_partial_path' do
     before(:each) do
       @current_user = create(:user, id: 1)
-      helper.stub(:current_user).and_return(@current_user)
+      allow(helper).to receive(:current_user).and_return(@current_user)
     end
 
     it 'returns a contact_user_partial_path' do
-      helper.stub(:user_signed_in?).and_return(true)
+      allow(helper).to receive(:user_signed_in?).and_return(true)
       assign(:post, create(:post, user_id: create(:user, id: 2).id))
       expect(helper.contact_user_partial_path).to(
         eq 'posts/show/contact_user'
@@ -108,7 +108,7 @@ RSpec.describe PostsHelper, :type => :helper do
     end
 
     it 'returns a empty partials path' do
-      helper.stub(:user_signed_in?).and_return(true)
+      allow(helper).to receive(:user_signed_in?).and_return(true)
       assign(:post, create(:post, user_id: @current_user.id))
       expect(helper.contact_user_partial_path).to(
         eq 'shared/empty_partial'
@@ -116,7 +116,7 @@ RSpec.describe PostsHelper, :type => :helper do
     end
 
     it 'returns a login_required path' do
-      helper.stub(:user_signed_in?).and_return(false)
+      allow(helper).to receive(:user_signed_in?).and_return(false)
       expect(helper.contact_user_partial_path).to(
         eq 'posts/show/login_required'
       )
