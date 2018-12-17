@@ -16,4 +16,12 @@ class Private::Conversation < ApplicationRecord
       where(sender_id: user2_id, recipient_id: user1_id)
     )
   end
+
+  def opposed_user(user)
+    if user == recipient
+      sender
+    else
+      recipient
+    end
+  end
 end
