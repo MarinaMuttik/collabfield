@@ -12,4 +12,20 @@ module Private::MessagesHelper
       'shared/empty_partial'
     end
   end
+
+  def sent_or_received(message, user)
+    if user.id == message.user_id
+      'message-sent'
+    else
+      'message-received'
+    end
+  end
+
+  def seen_or_unseen(message)
+    if message.seen == false
+      'unseen'
+    else
+      ''
+    end
+  end
 end

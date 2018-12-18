@@ -25,4 +25,40 @@ RSpec.describe Private::MessagesHelper, :type => :helper do
       )
     end
   end
+
+  context '#sent_or_received' do
+    let(:user) { create(:user) }
+    let(:message) { create(:private_message) }
+
+    it 'returns a message sent class' do
+      message.update(user_id: user.id)
+      expect(helper.sent_or_received(message, user)).to(
+        eq 'message-sent'
+      )
+    end
+
+    it 'returns a message received class' do
+      expect(helper.sent_or_received(message, user)).to(
+        eq 'message-received'
+      )
+    end
+  end
+
+  context '#seen_or_unseen' do
+    let(:message) { create(:private_message) }
+
+    it 'returns an unseen class' do
+      message.update(seen: false)
+      expect(helper.seen_or_unseen(message)).to(
+        eq 'unseen'
+      )
+    end
+
+    it 'returns an empty class' do
+      message.update(seen: true)
+      expect(helper.seen_or_unseen(message)).to(
+        eq ''
+      )
+    end
+  end
 end
