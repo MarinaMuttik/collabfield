@@ -3,7 +3,7 @@ class Private::ConversationsController < ApplicationController
     recipient_id = Post.find(params[:post_id]).user.id
     @conversation = Private::Conversation.new(sender_id: current_user.id,
                                              recipient_id: recipient_id)
-    if conversation.save
+    if @conversation.save
       Private::Message.create(user_id: recipient_id,
                               conversation_id: @conversation.id,
                               body: params[:message_body])
@@ -30,6 +30,6 @@ class Private::ConversationsController < ApplicationController
   end
 
   def already_added?
-    sesstion[:private_conversations].include?(@conversation.id)
+    session[:private_conversations].include?(@conversation.id)
   end
 end
