@@ -4,11 +4,15 @@ textarea {
 
 .panel {
   margin: 0;
-  border: none !important;
+  border: none;
 }
 
 .panel-heading {
   border-radius: 0;
+  .contact-name-motif {
+    font-weight: bold;
+    color: $white;
+  }
 }
 
 .panel-body {
@@ -28,11 +32,11 @@ textarea {
 
 .conversation-heading, .conversation-heading-full, .new_chat_window {
   background-color: $teal !important;
-  color: white !important;
+  color: $white;
   height: 40px;
-  border: none !important;
+  border: none;
   a {
-    color: white !important;
+    color: $white;
   }
 
 }
@@ -46,7 +50,7 @@ textarea {
 }
 
 .close-conversation, .add-people-to-chat, .add-user-to-contacts, .contact-request-sent {
-  color: white;
+  color: $white;
   float: right;
   height: 40px;
   width: 40px;
@@ -66,11 +70,11 @@ textarea {
 .close-conversation {
   &:hover {
     border: none;
-    background-color: white;
-    color: $teal !important;
+    background-color: $white;
+    color: $teal;
   }
   &:visited, &:focus {
-    color: white;
+    color: $white;
   }
 }
 
@@ -82,7 +86,7 @@ textarea {
   textarea {
     border-radius: 0;
     border: none;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid $transp-teal;
   }
 }
 
@@ -95,6 +99,7 @@ textarea {
 }
 
 .messages-list {
+  color: $dark-teal;
   z-index: 1;
   min-height: 300px;
   max-height: 300px;
@@ -113,8 +118,8 @@ textarea {
 
 .message-sent {
   position: relative;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: $white;
+  border: 1px solid $transp-teal;
   border-radius: 5px;
   margin: 5px 5px 5px 50px;
   padding: 10px;
@@ -123,7 +128,7 @@ textarea {
 
 .message-received {
   background-color: $transp-teal;
-  border-color: #EEEEEE;
+  border-color: $teal;
   border-radius: 5px;
   margin: 5px 50px 5px 5px;
   padding: 10px;
@@ -133,12 +138,12 @@ textarea {
 .messages-date {
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid $transp-teal;
   line-height: 1px;
   line-height: 0.1rem;
   margin: 20px 0 20px;
   span {
-    background: #fff;
+    background: $teal;
     padding: 0 10px;
   }
 
