@@ -61,4 +61,12 @@ RSpec.describe Private::MessagesHelper, :type => :helper do
       )
     end
   end
+
+  context '#replace_link_to_private_messages_partial_path' do
+    it 'returns a replace link partial path' do
+      expect(helper.replace_link_to_private_messages_partial_path).to(
+        eq 'private/messages/load_more_messages/window/replace_link_to_messages'
+      )
+    end
+  end
 end

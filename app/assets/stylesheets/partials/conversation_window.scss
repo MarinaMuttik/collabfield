@@ -99,14 +99,17 @@ textarea {
 }
 
 .messages-list {
-  color: $dark-teal;
+  color: $darkest-teal;
   z-index: 1;
   min-height: 300px;
   max-height: 300px;
   overflow-y: auto;
   overflow-x: hidden;
   ul {
-    padding: 0;
+    padding: 1rem;
+  }
+  li {
+    margin-left: 2rem;
   }
 }
 
@@ -150,7 +153,8 @@ textarea {
 }
 
 .load-more-messages {
-  display: none;
+  color: $dark-teal;
+  display: block;
 }
 
 .loading-more-messages {
@@ -158,8 +162,4 @@ textarea {
   font-size: 2.0rem;
   padding: 10px 0;
   text-align: center;
-}
-
-.send-message {
-  display: none;
 }
