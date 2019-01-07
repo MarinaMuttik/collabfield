@@ -1,19 +1,3 @@
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
 # Collabfield
 
 Web application to allow users to sign up and login, create and view posts assigned to branches with categories, and instant message other users.
