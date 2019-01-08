@@ -1,4 +1,5 @@
-- branch_path_name = "#{params[:action]}_posts_path"
+- branch = params[:action]
+- branch_path_name = branch.to_s + "_posts_path"
 %section.col-sm-12
   %ul.categories-list
     = render all_categories_button_partial_path,
