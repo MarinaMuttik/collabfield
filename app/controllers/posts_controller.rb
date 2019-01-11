@@ -45,6 +45,8 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to post_path(@post)
     else
+      @branch = params['post']['branch']
+      @categories = Category.where(branch: @branch)
       render 'edit'
     end
   end
