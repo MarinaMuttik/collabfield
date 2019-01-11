@@ -2,6 +2,14 @@
   .row
     .col-sm-6.col-sm-offset-3
       %h2.text-center= @post.title
-      %h4.posted-by Posted by: #{@post.user.name}
+      %h4.posted-by Posted by: #{@post.user.name} in #{@branch}
       %p= @post.content
       = render contact_user_partial_path
+
+      - if user_signed_in?
+        - if @post.user_id == current_user.id
+          .text-center
+            = link_to 'Edit post', edit_post_path(@post), class: 'btn'
+            = link_to 'Delete post', @post, :method => :delete,
+                                            :confirm => "Are you sure?",
+                                            class: 'btn'

@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @branch = Category.find(@post.category_id).branch
     if user_signed_in?
       @message_has_been_sent = conversation_exist?
     end
@@ -22,6 +23,8 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @branch = Category.find(@post.category_id).branch
+    @categories = Category.where(branch: @branch)
   end
 
   def create
@@ -47,11 +50,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    # redirect_branch = @post.branch
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_for_branch(params[@post.branch])
+    render 'deleted'
   end
 
   def hobby
