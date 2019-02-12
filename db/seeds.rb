@@ -51,6 +51,12 @@ def seed_posts
   end
 end
 
-seed_users
-seed_categories
-seed_posts
+if Rails.env.development?
+  seed_users
+  seed_categories
+  seed_posts
+end
+
+if Rails.env.production?
+  seed_categories
+end
